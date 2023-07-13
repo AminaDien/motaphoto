@@ -1,0 +1,102 @@
+/*
+Theme Name: My Theme
+Theme URI: https://www.motaphoto.local
+Author: Dien Amina
+Author URI: https://www.motaphoto.local
+Description: Thème personnalisé de motaphoto
+Version: 1.0
+*/
+
+// Polices
+
+@font-face {
+    font-family: 'Space-mono';
+    src: url('fonts/space-mono/SpaceMono-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+  
+@font-face {
+    font-family: 'Space-mono';
+    src: url('fonts/space-mono/SpaceMono-Italic.ttf') format('truetype');
+    font-weight: 400;
+    font-style: italic;
+}
+  
+@font-face {
+    font-family: 'Space-mono';
+    src: url('fonts/space-mono/SpaceMono-BoldItalic.ttf') format('truetype');
+    font-weight: 700;
+    font-style: italic;
+}
+  
+@font-face {
+    font-family: 'Poppins';
+    font-weight: 300;
+    src: url('fonts/poppins/Poppins-Light.ttf');
+}
+
+body {
+    font-family: 'Space-mono', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #333;
+    background-color: #fff;
+}
+
+.menu-h {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  
+    .logo {
+      width: 45%;
+    }
+  
+    .menu-pages {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+  
+      li {
+        list-style: none;
+        margin-left: 40px; /* Marge entre les liens */
+  
+        a {
+          color: black;
+          text-decoration: none;
+          
+          &:hover {
+            font-size: 1.2em; /* Augmente la taille du texte au survol */
+          }
+        }
+      }
+    }
+  }
+  
+.menu-f {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+    border-top: 1px solid black;
+  
+    li {
+        list-style: none;
+        margin-left: 40px; /* Marge entre les liens */
+  
+        a {
+          color: black;
+          text-decoration: none;
+          
+          &:hover {
+            font-size: 1.2em; /* Augmente la taille du texte au survol */
+          }
+        }
+      }
+    }
