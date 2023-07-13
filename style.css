@@ -42,13 +42,14 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-left: 100px;
-  margin-right: 100px;
+  margin-left: 70px;
+  margin-right: 70px;
   margin-top: 20px;
   margin-bottom: 20px;
 }
 .menu-h .logo {
-  width: 45%;
+  margin-right: 10px; /* Ajustez la marge selon vos besoins */
+  width: 40%;
 }
 .menu-h .menu-pages {
   display: flex;
@@ -57,7 +58,7 @@ body {
 }
 .menu-h .menu-pages li {
   list-style: none;
-  margin-left: 40px; /* Marge entre les liens */
+  margin-left: 40px; /* Ajustez la marge entre les liens selon vos besoins */
 }
 .menu-h .menu-pages li a {
   color: black;
@@ -69,22 +70,13 @@ body {
 
 .menu-f {
   list-style: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10px 0;
-  border-top: 1px solid black;
 }
-.menu-f li {
-  list-style: none;
-  margin-left: 40px; /* Marge entre les liens */
-}
-.menu-f li a {
+.menu-f a {
   color: black;
   text-decoration: none;
 }
-.menu-f li a:hover {
-  font-size: 1.2em; /* Augmente la taille du texte au survol */
+.menu-f a:hover {
+  font-size: 1.2em;
 }
 
 /*# sourceMappingURL=style.css.map */
