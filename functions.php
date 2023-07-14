@@ -16,3 +16,11 @@ function enqueue_custom_styles() {
 }
 add_action( 'wp_enqueue_scripts', 'enqueue_custom_styles' );
 
+
+// ajout de mon JS 
+function enqueue_custom_scripts() {
+    wp_enqueue_script( 'custom-scripts', get_template_directory_uri() . '/js/scripts.js', array( 'jquery' ), '1.0', true );
+  }
+  
+  add_action( 'wp_enqueue_scripts', 'enqueue_custom_scripts' );
+  
