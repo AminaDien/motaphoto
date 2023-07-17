@@ -9,7 +9,7 @@
 
 <nav class="menu-h">
     <div class="logo">
-        <a href="<?php echo esc_url(home_url('/')); ?>"><img class="logo" src="<?php echo esc_url(get_template_directory_uri() . '/assets/logo.png'); ?>" alt="Logo"></a>
+        <a href="<?php echo esc_url(home_url('accueil')); ?>"><img class="logo" src="<?php echo esc_url(get_template_directory_uri() . '/assets/logo.png'); ?>" alt="Logo"></a>
     </div>
 
     <?php
