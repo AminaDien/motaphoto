@@ -30,12 +30,29 @@ Version: 1.0
   font-weight: 300;
   src: url("fonts/poppins/Poppins-Light.ttf");
 }
-body {
+body, h3 {
   font-family: "Space-mono", sans-serif;
   font-weight: 400;
   font-style: normal;
   color: #333;
   background-color: #fff;
+}
+
+h1 {
+  font-family: "Space-mono", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+h2 {
+  font-family: "Space-mono", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+p {
+  font-family: "Poppins";
+  font-weight: 300;
 }
 
 .menu-h {
@@ -47,23 +64,35 @@ body {
   margin-top: 20px;
   margin-bottom: 20px;
 }
-.menu-h .logo {
+
+.logo {
   width: 45%;
 }
-.menu-h .menu-pages {
+@media screen and (max-width: 767px) {
+  .logo {
+    width: 80%;
+  }
+}
+
+.menu-pages {
   display: flex;
   justify-content: flex-end;
   align-items: center;
 }
-.menu-h .menu-pages li {
+@media screen and (max-width: 767px) {
+  .menu-pages {
+    display: none; /* Masque le menu principal sur les appareils mobiles */
+  }
+}
+.menu-pages li {
   list-style: none;
   margin-left: 40px; /* Marge entre les liens */
 }
-.menu-h .menu-pages li a {
+.menu-pages li a {
   color: black;
   text-decoration: none;
 }
-.menu-h .menu-pages li a:hover {
+.menu-pages li a:hover {
   font-size: 1.2em; /* Augmente la taille du texte au survol */
 }
 
@@ -84,7 +113,107 @@ body {
   text-decoration: none;
 }
 .menu-f li a:hover {
-  font-size: 1.2em; /* Augmente la taille du texte au survol */
+  font-size: 1.2em;
+}
+@media screen and (max-width: 767px) {
+  .menu-f {
+    flex-direction: column;
+    padding: 20px 0;
+  }
+  .menu-f li {
+    margin: 10px 0; /* Ajuste la marge entre les liens sur les appareils mobiles */
+  }
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* S'assurer que la modale est superposée à tout le reste */
+}
+.modal .modal-content {
+  position: fixed;
+  width: 36%;
+  background: rgba(0, 0, 0, 0.3764705882);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  top: 10%;
+  left: 33%;
+  background-color: #ffffff;
+  border: solid 2px black;
+  animation: appmodal 1s ease-in-out;
+  flex-direction: column;
+}
+@keyframes appmodal {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.modal .modal-header img {
+  min-height: 100px;
+  width: 100%;
+  object-fit: cover;
+}
+.modal .modal-body {
+  background: white;
+  max-width: 680px;
+  padding: 30px;
+  position: relative;
+  width: 50%;
+}
+.modal p {
+  font-family: "Space-mono", "sans serif";
+  font-weight: 400;
+}
+
+.wpcf7-submit {
+  text-align: center;
+  background: #D8D8D8;
+  font-family: "Space-mono", "sans serif";
+  font-weight: 400;
+  width: 93%;
+  border-radius: 3px;
+  padding: 15px;
+  border: none;
+}
+
+label textarea, input {
+  width: 90%;
+  display: block;
+}
+
+main {
+  width: 90vw;
+  margin-left: 3vw;
+  margin-right: 3vw;
+}
+
+.post {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  margin-bottom: 1vh;
+}
+
+.post-info {
+  width: 50vw;
+  border-bottom: 2px solid black;
+  margin-bottom: 2.2vh;
+  margin-right: 2vw;
+}
+.post-info h1 {
+  width: 10vw;
 }
 
 /*# sourceMappingURL=style.css.map */
