@@ -163,10 +163,10 @@ p {
     justify-content: center;
     align-items: center;
     z-index: 999;
-    top: 10%;
+    top: 5%;
     left: 33%;
     background-color: #ffffff;
-    border: solid 2px black;
+    border: solid 3px black;
     animation: appmodal 1s ease-in-out;
     flex-direction: column;
   }
@@ -194,8 +194,14 @@ p {
     & p {
       font-family:'Space-mono','sans serif';
       font-weight: 400;
+      font-size: small;
     }
   }
+  
+  @media (max-width: 768px) {
+    .modal .modal-content {
+      width: 80%;
+    }}
 
 .wpcf7-submit{
   text-align: center;
@@ -208,9 +214,27 @@ p {
   border: none;
 }
 
-label textarea,input{
-  width: 90%;
-  display:block;
+$width: 90%;
+$border: 2px solid #ccc;
+$border-radius: 10px;
+$margin-top: 5px;
+
+label input {
+  width: $width;
+  display: block;
+  border: $border;
+  border-radius: $border-radius;
+  padding: 8px; 
+  margin-top: $margin-top;
+}
+
+label textarea {
+  width: $width;
+  display: block;
+  border: $border;
+  border-radius: $border-radius;
+  padding: 10px;
+  margin-top: $margin-top;
 }
 
 // SINGLE
@@ -238,3 +262,4 @@ main {
     width: 10vw;
   }
 }
+
