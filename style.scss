@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*
 Theme Name: My Theme
 Theme URI: https://www.motaphoto.local
@@ -10,36 +11,30 @@ Version: 1.0
 // POLICES
 
 @font-face {
-    font-family: 'Space-mono';
-    src: url('fonts/space-mono/SpaceMono-Regular.ttf') format('truetype');
-    font-weight: 400;
-    font-style: normal;
+  font-family: "Space-mono";
+  src: url("fonts/space-mono/SpaceMono-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
 }
-  
 @font-face {
-    font-family: 'Space-mono';
-    src: url('fonts/space-mono/SpaceMono-Italic.ttf') format('truetype');
-    font-weight: 400;
-    font-style: italic;
+  font-family: "Space-mono";
+  src: url("fonts/space-mono/SpaceMono-Italic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
 }
-  
 @font-face {
-    font-family: 'Space-mono';
-    src: url('fonts/space-mono/SpaceMono-BoldItalic.ttf') format('truetype');
-    font-weight: 700;
-    font-style: italic;
+  font-family: "Space-mono";
+  src: url("fonts/space-mono/SpaceMono-BoldItalic.ttf") format("truetype");
+  font-weight: 700;
+  font-style: italic;
 }
-  
 @font-face {
-    font-family: 'Poppins';
-    font-weight: 300;
-    src: url('fonts/poppins/Poppins-Light.ttf');
+  font-family: "Poppins";
+  font-weight: 300;
+  src: url("fonts/poppins/Poppins-Light.ttf");
 }
-
-$font-family: 'Space-mono', sans-serif;
-
 body, h3 {
-  font-family: $font-family;
+  font-family: "Space-mono", sans-serif;
   font-weight: 400;
   font-style: normal;
   color: #333;
@@ -47,23 +42,23 @@ body, h3 {
 }
 
 h1 {
-  font-family: $font-family;
+  font-family: "Space-mono", sans-serif;
   font-weight: 700;
   font-style: italic;
 }
 
 h2 {
-  font-family: $font-family;
+  font-family: "Space-mono", sans-serif;
   font-weight: 400;
   font-style: italic;
 }
 
 p {
-  font-family: 'Poppins';
+  font-family: "Poppins";
   font-weight: 300;
 }
 
-// MENU 
+/* MENU */
 
 .menu-h {
   display: flex;
@@ -75,39 +70,39 @@ p {
   margin-bottom: 20px;
 }
 
+.logo {
+  width: 45%;
+}
+
+@media screen and (max-width: 767px) {
   .logo {
-    width: 45%;
-
-    @media screen and (max-width: 767px) {
-      width: 80%;
-    }
+    width: 80%;
   }
+}
+.menu-pages {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
 
+@media screen and (max-width: 767px) {
   .menu-pages {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-
-    @media screen and (max-width: 767px) {
-      display: none; /* Masque le menu principal sur les appareils mobiles */
-    }
-
-    li {
-      list-style: none;
-      margin-left: 40px; /* Marge entre les liens */
-
-      a {
-        color: black;
-        text-decoration: none;
-
-        &:hover {
-          font-size: 1.2em; /* Augmente la taille du texte au survol */
-        }
-      }
-    }
+    display: none; /* Masque le menu principal sur les appareils mobiles */
   }
+}
+.menu-pages li {
+  list-style: none;
+  margin-left: 40px; /* Marge entre les liens */
+}
 
-// FOOTER 
+.menu-pages li a {
+  color: black;
+  text-decoration: none;
+}
+
+.menu-pages li a:hover {
+  font-size: 1.2em; /* Augmente la taille du texte au survol */
+}
 
 .menu-f {
   list-style: none;
@@ -116,32 +111,33 @@ p {
   align-items: center;
   padding: 10px 0;
   border-top: 1px solid black;
+}
 
-  li {
-    list-style: none;
-    margin-left: 40px; /* Marge entre les liens */
+.menu-f li {
+  list-style: none;
+  margin-left: 40px; /* Marge entre les liens */
+}
 
-    a {
-      color: black;
-      text-decoration: none;
+.menu-f li a {
+  color: black;
+  text-decoration: none;
+}
 
-      &:hover {
-        font-size: 1.2em;
-      }
-    }
+.menu-f li a:hover {
+  font-size: 1.2em;
+}
+
+@media screen and (max-width: 767px) {
+  .menu-f {
+    flex-direction: column;
+    padding: 20px 0;
   }
-
-  @media screen and (max-width: 767px) {
-    flex-direction: column; 
-    padding: 20px 0; 
-
-    li {
-      margin: 10px 0; /* Ajuste la marge entre les liens sur les appareils mobiles */
-    }
+  .menu-f li {
+    margin: 10px 0; /* Ajuste la marge entre les liens sur les appareils mobiles */
   }
 }
 
-// MODALE 
+/* MODALE */
 
 .modal {
   position: fixed;
@@ -154,91 +150,88 @@ p {
   justify-content: center;
   align-items: center;
   z-index: 9999; /* S'assurer que la modale est superposée à tout le reste */
+}
 
-  .modal-content {
-    position: fixed;
-    width: 36%;
-    background: #00000060;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 999;
-    top: 5%;
-    left: 33%;
-    background-color: #ffffff;
-    border: solid 3px black;
-    animation: appmodal 1s ease-in-out;
-    flex-direction: column;
-  }
-  
-  @keyframes appmodal {
-    from { opacity: 0; }
-    to { opacity: 1; }
-  }
+.modal .modal-content {
+  position: fixed;
+  width: 36%;
+  background: rgba(0, 0, 0, 0.3764705882);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  top: 5%;
+  left: 33%;
+  background-color: #ffffff;
+  border: solid 3px black;
+  animation: appmodal 1s ease-in-out;
+  flex-direction: column;
+}
 
-    .modal-header {
-      img {
-        min-height: 100px;
-        width: 100%;
-        object-fit: cover;
-      }
-    }
-    
-    .modal-body {
-      background: white;
-      max-width: 680px;
-      padding: 30px;
-      position: relative;
-      width: 50%;
-    }
-    & p {
-      font-family:'Space-mono','sans serif';
-      font-weight: 400;
-      font-size: small;
-    }
+@keyframes appmodal {
+  from {
+    opacity: 0;
   }
-  
-  @media (max-width: 768px) {
-    .modal .modal-content {
-      width: 80%;
-    }}
+  to {
+    opacity: 1;
+  }
+}
+.modal .modal-header img {
+  min-height: 100px;
+  width: 100%;
+  object-fit: cover;
+}
 
-.wpcf7-submit{
+.modal .modal-body {
+  background: white;
+  max-width: 680px;
+  padding: 30px;
+  position: relative;
+  width: 50%;
+}
+
+.modal p {
+  font-family: "Space-mono", "sans serif";
+  font-weight: 400;
+  font-size: small;
+}
+
+@media (max-width: 768px) {
+  .modal .modal-content {
+    width: 80%;
+  }
+}
+
+label input {
+  width: 90%;
+  display: block;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  padding: 8px;
+  margin-top: 5px;
+}
+
+label textarea {
+  width: 90%;
+  display: block;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 5px;
+}
+
+.wpcf7-submit {
   text-align: center;
   background: #D8D8D8;
-  font-family:'Space-mono','sans serif';
+  font-family: "Space-mono", sans-serif;
   font-weight: 400;
-  width:93%;
+  width: 100%;
   border-radius: 3px;
   padding: 15px;
   border: none;
 }
 
-$width: 90%;
-$border: 2px solid #ccc;
-$border-radius: 10px;
-$margin-top: 5px;
-
-label input {
-  width: $width;
-  display: block;
-  border: $border;
-  border-radius: $border-radius;
-  padding: 8px; 
-  margin-top: $margin-top;
-}
-
-label textarea {
-  width: $width;
-  display: block;
-  border: $border;
-  border-radius: $border-radius;
-  padding: 10px;
-  margin-top: $margin-top;
-}
-
-// SINGLE
-
+/* SINGLE */
 main {
   width: 90vw;
   margin-left: 3vw;
@@ -248,18 +241,65 @@ main {
 .post {
   display: flex;
   flex-direction: row;
-  align-items: flex-end;
-  margin-bottom: 1vh;
+  align-items: end;
+  line-height: 2.5;
 }
 
 .post-info {
   width: 50vw;
-  border-bottom: 2px solid black;
-  margin-bottom: 2.2vh;
+  border-bottom: 1px solid black;
+  margin-bottom: 2vh;
   margin-right: 2vw;
+  height: 430px;
+  text-transform: uppercase; /* Met le contenu en majuscules */
+}
+.post-info h1 {
+  width: 10vw;
+}
 
-  h1 {
-    width: 10vw;
+.button-styles {
+  width: 15vw;
+  height: 40px;
+  background-color: #D8D8D8;
+  font-family: "Space-mono", sans-serif;
+  font-weight: 400;
+  border: 0;
+  padding: 10px;
+}
+
+.sous_partie {
+  border-bottom: solid black 1px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-bottom: 2vh;
+  justify-content: space-between;
+  height: 118px;
+
+  button {
+    @extend .button-styles;
+    margin-left: 5vw;
   }
 }
 
+.photos {
+  @extend .button-styles;
+  margin-inline-start: 45%;
+}
+
+
+/*fléche carrousel*/
+.carrousel .arrow_left {
+  width: 2vw;
+  height: 1vh;
+}
+
+.carrousel .arrow_right {
+  width: 2vw;
+  height: 1vh;
+}
+
+.carrousel {
+  display: flex;
+  justify-content: space-between;
+}

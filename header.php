@@ -12,6 +12,8 @@
         <a href="<?php echo esc_url(home_url('accueil')); ?>"><img class="logo" src="<?php echo esc_url(get_template_directory_uri() . '/assets/logo.png'); ?>" alt="Logo"></a>
     </div>
 
+    <div class="buttonmenu">
+
     <?php
     /* Affiche le menu "Menu principal" enregistré au préalable */
     wp_nav_menu([

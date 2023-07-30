@@ -55,6 +55,7 @@ p {
   font-weight: 300;
 }
 
+/* MENU */
 .menu-h {
   display: flex;
   justify-content: space-between;
@@ -68,17 +69,18 @@ p {
 .logo {
   width: 45%;
 }
+
 @media screen and (max-width: 767px) {
   .logo {
     width: 80%;
   }
 }
-
 .menu-pages {
   display: flex;
   justify-content: flex-end;
   align-items: center;
 }
+
 @media screen and (max-width: 767px) {
   .menu-pages {
     display: none; /* Masque le menu principal sur les appareils mobiles */
@@ -88,10 +90,12 @@ p {
   list-style: none;
   margin-left: 40px; /* Marge entre les liens */
 }
+
 .menu-pages li a {
   color: black;
   text-decoration: none;
 }
+
 .menu-pages li a:hover {
   font-size: 1.2em; /* Augmente la taille du texte au survol */
 }
@@ -104,17 +108,21 @@ p {
   padding: 10px 0;
   border-top: 1px solid black;
 }
+
 .menu-f li {
   list-style: none;
   margin-left: 40px; /* Marge entre les liens */
 }
+
 .menu-f li a {
   color: black;
   text-decoration: none;
 }
+
 .menu-f li a:hover {
   font-size: 1.2em;
 }
+
 @media screen and (max-width: 767px) {
   .menu-f {
     flex-direction: column;
@@ -124,7 +132,7 @@ p {
     margin: 10px 0; /* Ajuste la marge entre les liens sur les appareils mobiles */
   }
 }
-
+/* MODALE */
 .modal {
   position: fixed;
   top: 0;
@@ -137,6 +145,7 @@ p {
   align-items: center;
   z-index: 9999; /* S'assurer que la modale est superposée à tout le reste */
 }
+
 .modal .modal-content {
   position: fixed;
   width: 36%;
@@ -152,6 +161,7 @@ p {
   animation: appmodal 1s ease-in-out;
   flex-direction: column;
 }
+
 @keyframes appmodal {
   from {
     opacity: 0;
@@ -165,6 +175,7 @@ p {
   width: 100%;
   object-fit: cover;
 }
+
 .modal .modal-body {
   background: white;
   max-width: 680px;
@@ -172,6 +183,7 @@ p {
   position: relative;
   width: 50%;
 }
+
 .modal p {
   font-family: "Space-mono", "sans serif";
   font-weight: 400;
@@ -183,17 +195,6 @@ p {
     width: 80%;
   }
 }
-.wpcf7-submit {
-  text-align: center;
-  background: #D8D8D8;
-  font-family: "Space-mono", "sans serif";
-  font-weight: 400;
-  width: 93%;
-  border-radius: 3px;
-  padding: 15px;
-  border: none;
-}
-
 label input {
   width: 90%;
   display: block;
@@ -212,6 +213,18 @@ label textarea {
   margin-top: 5px;
 }
 
+.wpcf7-submit {
+  text-align: center;
+  background: #D8D8D8;
+  font-family: "Space-mono", sans-serif;
+  font-weight: 400;
+  width: 100%;
+  border-radius: 3px;
+  padding: 15px;
+  border: none;
+}
+
+/* SINGLE */
 main {
   width: 90vw;
   margin-left: 3vw;
@@ -221,18 +234,64 @@ main {
 .post {
   display: flex;
   flex-direction: row;
-  align-items: flex-end;
-  margin-bottom: 1vh;
+  align-items: end;
+  line-height: 2.5;
 }
 
 .post-info {
   width: 50vw;
-  border-bottom: 2px solid black;
-  margin-bottom: 2.2vh;
+  border-bottom: 1px solid black;
+  margin-bottom: 2vh;
   margin-right: 2vw;
+  height: 430px;
+  text-transform: uppercase; /* Met le contenu en majuscules */
 }
+
 .post-info h1 {
   width: 10vw;
+}
+
+.button-styles, .photos, .sous_partie button {
+  width: 15vw;
+  height: 40px;
+  background-color: #D8D8D8;
+  font-family: "Space-mono", sans-serif;
+  font-weight: 400;
+  border: 0;
+  padding: 10px;
+}
+
+.sous_partie {
+  border-bottom: solid black 1px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-bottom: 2vh;
+  justify-content: space-between;
+  height: 118px;
+}
+.sous_partie button {
+  margin-left: 5vw;
+}
+
+.photos {
+  margin-inline-start: 45%;
+}
+
+/*fléche carrousel*/
+.carrousel .arrow_left {
+  width: 2vw;
+  height: 1vh;
+}
+
+.carrousel .arrow_right {
+  width: 2vw;
+  height: 1vh;
+}
+
+.carrousel {
+  display: flex;
+  justify-content: space-between;
 }
 
 /*# sourceMappingURL=style.css.map */
