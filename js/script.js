@@ -2,22 +2,21 @@
 
 (function($) {
   'use strict'; // mm erreurs courantes traitées, code +sûr et -sujet à des erreurs silencieuses
-let modal = document.getElementById('myModal');
-
-
+  var modal = document.getElementById('myModal');
+  const btn = document.querySelectorAll('.myBtn')
+  btn.forEach(function(button ) {
+      button.addEventListener('click', function(e){
+        e.preventDefault();
+  
+        modal.style.display = "block";
+      });
+  
+  })
 
 // fermer modale 
 window.onclick = function(event) {
   if (event.target == modal) {
       modal.style.display = "none";}} 
-
-  
-// MENU 
-
-// SINGLE 
-
-// bouton contact
-
 
 // rèf
 $(document).ready(function(){
