@@ -50,7 +50,8 @@ h1 {
 h2 {
   font-family: "Space-mono", sans-serif;
   font-weight: 400;
-  font-style: italic;
+  font-style: normal;
+  font-size: large;
 }
 
 p {
@@ -139,7 +140,34 @@ p {
 
 /* MODALE */
 
+.myBtn {
+  font-family: "Space-mono", sans-serif;
+  border: none;
+  background-color: white;
+  margin-left: 25px;
+  font-size: medium;
+}
+
+.myBtn:hover {
+  font-size: 1.2em;
+}
+
 .modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal2 {
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -243,18 +271,23 @@ main {
   flex-direction: row;
   align-items: end;
   line-height: 2.5;
+
+  img {
+    object-fit: cover;
+    width: 50vw;
+  }
 }
 
 .post-info {
   width: 50vw;
   border-bottom: 1px solid black;
-  margin-bottom: 2vh;
   margin-right: 2vw;
   height: 430px;
   text-transform: uppercase; /* Met le contenu en majuscules */
-}
-.post-info h1 {
+
+  h1 {
   width: 10vw;
+  }
 }
 
 .button-styles {
@@ -265,6 +298,7 @@ main {
   font-weight: 400;
   border: 0;
   padding: 10px;
+  cursor: pointer;
 }
 
 .sous_partie {
@@ -272,34 +306,45 @@ main {
   display: flex;
   flex-direction: row;
   align-items: center;
+  padding-top: 2vh;
   padding-bottom: 2vh;
   justify-content: space-between;
   height: 118px;
 
   button {
     @extend .button-styles;
+    font-size: small;
     margin-left: 5vw;
   }
 }
 
-.photos {
-  @extend .button-styles;
-  margin-inline-start: 45%;
-}
-
-
-/*fléche carrousel*/
-.carrousel .arrow_left {
-  width: 2vw;
-  height: 1vh;
-}
-
-.carrousel .arrow_right {
-  width: 2vw;
-  height: 1vh;
-}
-
-.carrousel {
+.photo_choix {
   display: flex;
+  flex-direction: row;
+}
+
+.section3 {
+  padding-top: 6vh;
+}
+
+.btn_photos {
+  @extend .button-styles;
+  margin-left: 39vw;
+  margin-top: 4vw;
+  margin-bottom: 4vw;
+}
+
+.photo_aleatoire {
+  display: flex;
+  flex-direction: row;
   justify-content: space-between;
+  padding-top: 5vh;
+}
+
+
+.attachment-post-thumbnail.size-post-thumbnail.wp-post-image {
+  object-fit: cover;
+  width: 635px;
+  height: 535px;
+  display: flex;
 }
