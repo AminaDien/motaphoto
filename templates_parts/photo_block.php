@@ -1,30 +1,51 @@
-<?php $args = array(
-       'post_type' => 'photos',
-	   'post__not_in' => array (get_the_ID()),
-	   'posts_per_page' => 2,
-   );
+<section>
+    <?php
+    // On place les critères de la requête dans un Array
+    $cats = array_map(function ($terms) {
+        return $terms->term_id;
+    }, get_the_terms(get_post(), 'categorie'));
+    $args = array(
+        'post__not_in' => [get_the_ID()],
+        'order_by_rand' => 'rand',
+        'post_type' => 'photo',
+        'tax_query' => [
+            [
+                'taxonomy' => 'categorie',
+                'terms' => $cats,
+            ]
+        ]
+    );
+    //On crée ensuite une instance de requête WP_Query basée sur les critères placés dans la variables $args
+    $query = new WP_Query($args);
+    ?>
+    <div class="photo_aleatoire">
+        <!-- //On vérifie si le résultat de la requête contient des articles -->
+        <?php if ($query->have_posts()): ?>
 
-   $query = new WP_Query( $args );
-?>
+            <!-- //On parcourt chacun des articles résultant de la requête -->
+            <?php $count = 0; ?>
+            <?php while ($query->have_posts()): ?>
+                <?php $count++; ?>
+                <?php $query->the_post(); ?>
 
-<?php if($query->have_posts()) : ?>
-       <?php while($query->have_posts()) : ?>
-           <?php $query->the_post();?>
-           <div class="overlay-image">
-                      <?php the_content(); ?>
-                      <div class=hover>
-                             <img class="full_screen" data-image="<?php echo get_the_post_thumbnail_url(); ?>" src="<?php echo get_template_directory_uri(); ?>./assets/fullscreen.png" alt="full_screen">
-                             <a href="<?php echo get_the_permalink(get_the_ID());?>">
-                                    <img class="eye" src="<?php echo get_template_directory_uri(); ?>./assets/eye.png" alt="eye">
-                             </a>
-                             <div class="texte">
-                                   <div><?php the_title(); ?></div> 
-                                    <div class="right_now"><?php echo strip_tags(get_the_term_list($post->ID, 'categorie'));?></div>
-                             </div>
-                        </div> 
-           </div>
-       <?php endwhile; ?>
- <?php endif; 
-  wp_reset_query();
-?>
 
+                <?php the_content(); ?>
+                <?php if (has_post_thumbnail()): ?>
+
+                    <div class="photo_aimerezaussi">
+                        <?php the_post_thumbnail(); ?>
+                       
+                    </div>
+                    <?php if ($count == 2) {
+                        break; // sortir de la boucle si deux photos ont été traitées
+                    } ?>
+                <?php endif; ?>
+
+            <?php endwhile; ?>
+        </div>
+    <?php else: ?>
+        <p>Désolé, aucun article ne correspond à cette requête</p>
+    <?php endif;
+        wp_reset_query();
+        ?>
+</section>
