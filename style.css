@@ -290,6 +290,11 @@ main {
   border: 0;
   padding: 10px;
   cursor: pointer;
+  transition: transform 0.2s ease; /* Ajouter la transition pour l'animation d'élargissement */
+}
+
+.button-styles:hover, .btn_photos:hover, .sous_partie button:hover {
+  transform: scale(1.2); /* Mise à l'échelle de 20% au survol */
 }
 
 .sous_partie {
@@ -304,22 +309,44 @@ main {
 }
 .sous_partie button {
   font-size: small;
-  margin-left: 5vw;
+  margin-right: 80vh;
 }
 
 .photo_choix {
   display: flex;
   flex-direction: row;
+  padding-top: 7vw;
+}
+
+/* Masquer les photos avant et après par défaut */
+.photo_avant .photo-hover,
+.photo_apres .photo-hover {
+  display: none;
+  position: absolute;
+}
+
+/* Styling pour les flèches */
+.arrow-link {
+  display: inline-block;
+  position: relative;
+}
+
+.arrow-left {
+  margin-right: 10px;
+}
+
+.arrow-right {
+  margin-left: 10px;
+}
+
+/* Afficher les photos avant et après au survol des flèches correspondantes */
+.photo_avant:hover .photo-hover.photo-left,
+.photo_apres:hover .photo-hover.photo-right {
+  display: block;
 }
 
 .section3 {
   padding-top: 6vh;
-}
-
-.btn_photos {
-  margin-left: 39vw;
-  margin-top: 4vw;
-  margin-bottom: 4vw;
 }
 
 .photo_aleatoire {
@@ -336,6 +363,58 @@ main {
   display: flex;
 }
 
-/*fléche carrousel*/
+.btn_photos {
+  margin-left: 39vw;
+  margin-top: 4vw;
+  margin-bottom: 4vw;
+}
+
+/* responsive single */
+@media screen and (max-width: 700px) {
+  .post {
+    flex-direction: column-reverse;
+  }
+  .post img {
+    width: 90vw;
+  }
+  .post-info {
+    width: 80vw;
+  }
+  .photo_choix, .btn_photos {
+    display: none;
+  }
+  .sous_partie {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+  }
+  .sous_partie p {
+    margin-left: 0%;
+    margin-bottom: 3vh;
+  }
+  .sous_partie button {
+    margin: 0%;
+    width: 40vh;
+  }
+  .photo_aimerezaussi {
+    margin-bottom: 4vh;
+  }
+  .photo_aleatoire {
+    display: flex;
+    flex-direction: column;
+  }
+  .attachment-post-thumbnail.size-post-thumbnail.wp-post-image {
+    object-fit: cover;
+    width: 450px;
+    height: 350px;
+    display: flex;
+  }
+  .section3 h2 {
+    display: flex;
+    justify-content: center;
+    font-size: x-large;
+  }
+}
 
 /*# sourceMappingURL=style.css.map */
