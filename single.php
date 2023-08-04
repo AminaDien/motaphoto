@@ -16,31 +16,31 @@
         <?php endif; ?>
       </div>
 	  <div class="sous_partie">
-			<p>Cette photo vous intéresse ?
+			<p>Cette photo vous intéresse ?</p>
 			<a><button class="myBtn" id="lienmodale">Contact</button></a>
-			</p>
-			<div class="photo_choix">
-                    <div class="photo_avant">
-                        <?php
-                        $prev_post = get_previous_post();
-                        $next_post = get_next_post();
-
-                        if (!empty($prev_post)) {
-                            $prev_image = get_the_post_thumbnail_url($prev_post->ID);
-                            previous_post_link('<span class="left"><a href="' . get_permalink($prev_post) . '" rel="prev"><img src="' . get_template_directory_uri() . '/assets/gauche.jpg"></a>
-							<img src="' . $prev_image . '" alt="' . $prev_post->post_title . '" width="75" height="75"/> </span>', '%title', false);
-                        }
-                        ?>
-                    </div>
-                    <div class="photo_apres">
-                        <?php
-                        if (!empty($next_post)) {
-                            $next_image = get_the_post_thumbnail_url($next_post->ID);
-                            next_post_link('<span class="right"><img src="' . $next_image . '" alt="' . $next_post->post_title . '" width="75" height="75"/> <a href="' . get_permalink($next_post) . '" rel="next"><img src="' . get_template_directory_uri() . '/assets/droite.jpg"></a></span>', '%title', false);
-                        }
-                        ?>
-                    </div>
-                </div>
+			
+		<div class="photo_choix">
+    <div class="photo_avant">
+        <?php
+        $prev_post = get_previous_post();
+        if (!empty($prev_post)) {
+            $prev_image = get_the_post_thumbnail_url($prev_post->ID);
+            echo '<a href="' . get_permalink($prev_post) . '" rel="prev" class="arrow-link arrow-left"><img src="' . get_template_directory_uri() . '/assets/gauche.jpg"></a>';
+            echo '<img src="' . $prev_image . '" alt="' . $prev_post->post_title . '" width="75" height="75" class="photo-hover photo-left">';
+        }
+        ?>
+    </div>
+    <div class="photo_apres">
+        <?php
+        $next_post = get_next_post();
+        if (!empty($next_post)) {
+            $next_image = get_the_post_thumbnail_url($next_post->ID);
+            echo '<img src="' . $next_image . '" alt="' . $next_post->post_title . '" width="75" height="75" class="photo-hover photo-right">';
+            echo '<a href="' . get_permalink($next_post) . '" rel="next" class="arrow-link arrow-right"><img src="' . get_template_directory_uri() . '/assets/droite.jpg"></a>';
+        }
+        ?>
+    </div>
+</div>
 	  </div>
     <?php endwhile; ?>
   <?php endif; ?>
