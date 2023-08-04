@@ -23,4 +23,5 @@ $(document).ready(function(){
       $(".ref").val($('#ref-photo').text());
     });
     
+    
 })(jQuery);
