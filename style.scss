@@ -138,6 +138,32 @@ p {
   }
 }
 
+/* Styles pour le menu burger */
+.burger-menu {
+  display: none; 
+  cursor: pointer;
+}
+
+.bar {
+  width: 30px;
+  height: 4px;
+  margin: 6px 0;
+}
+
+@media (max-width: 768px) {
+  .menu-pages {
+    display: none;
+  }
+  
+  .burger-menu {
+    display: block; 
+  }
+  
+  .menu-active .menu-pages {
+    display: block;
+  }
+}
+
 /* MODALE */
 
 .myBtn {
@@ -328,6 +354,7 @@ main {
   display: flex;
   flex-direction: row;
   padding-top: 7vw;
+  position: relative;
 }
 
 /* Masquer les photos avant et après par défaut */
@@ -335,6 +362,19 @@ main {
 .photo_apres .photo-hover {
   display: none;
   position: absolute;
+}
+
+.photo-hover.photo-left {
+  position: absolute;
+  top: 14px;
+  object-fit: cover;
+}
+
+.photo-hover.photo-right{
+  position: absolute;
+  top: 14px;
+  right: -2px;
+  object-fit: cover;
 }
 
 /* Styling pour les flèches */
@@ -443,3 +483,21 @@ main {
   }
 
 }
+
+#heroheader {
+  position: relative; /* positionnerH1 sur l'image */
+  text-align: center; 
+
+h1 {
+  position: absolute;
+  top: 50%; /* Déplacer le titre de moitié de sa hauteur vers le bas */
+  left: 50%; /* Déplacer le titre de moitié de sa largeur vers la droite */
+  transform: translate(-50%, -50%); /* Centrer le titre par rapport à son propre centre */
+  font-size: 6rem; 
+  color: transparent;
+  -webkit-text-stroke: 3px white;
+  white-space: nowrap; /* Empêcher le titre de se briser en plusieurs lignes */
+}
+
+}
+
