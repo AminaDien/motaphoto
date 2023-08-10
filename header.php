@@ -21,4 +21,11 @@
         'menu_class' => 'menu-pages'
     ]);
     ?>
+
+<div class="burger-menu">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+
 </nav>
