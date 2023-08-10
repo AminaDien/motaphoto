@@ -23,5 +23,13 @@ $(document).ready(function(){
       $(".ref").val($('#ref-photo').text());
     });
     
-    
+// Script pour activer le menu burger
+const burgerMenu = document.querySelector('.burger-menu');
+const menuH = document.querySelector('.menu-h');
+
+burgerMenu.addEventListener('click', () => {
+  menuH.classList.toggle('menu-active'); // Active/désactive la classe pour agrandir le menu
+});
+
+
 })(jQuery);
