@@ -47,7 +47,31 @@
   <div class="section3">
         <h2>VOUS AIMEREZ AUSSI</h2>
                 <div  id="photosapp">
+                <?php
+    // On place les critères de la requête dans un Array
+    $cats = array_map(function ($terms) {
+        return $terms->term_id;
+    }, get_the_terms(get_post(), 'categorie'));
+    $args = array(
+        'posts_per_page' => 2,
+        'post__not_in' => [get_the_ID()],
+        'order_by_rand' => 'rand',
+        'post_type' => 'photo',
+        'tax_query' => [
+            [
+                'taxonomy' => 'categorie',
+                'terms' => $cats,
+            ]
+        ]
+    );
+    //On crée ensuite une instance de requête WP_Query basée sur les critères placés dans la variables $args
+    $query = new WP_Query($args);?>
+  <?php if ($query->have_posts()): ?>
 	<?php include_once "templates_parts/photo_block.php"; ?>   
+  <?php else: ?>
+        <p>Désolé, aucun article ne correspond à cette requête</p>
+  <?php endif;?>
+  <?php wp_reset_query();?>
   <a href="<?php echo home_url()?>"><button class="btn_photos" id="lienacc">Toutes les photos </button></a>             
 	</div>
 </main>

@@ -18,20 +18,17 @@
 </div>
 
 
-<div id="photo-list">
+<div class="photos_accueil">
   <?php
-  $photo_query = new WP_Query(array(
-    'orderby' => 'date',
-    'posts_per_page' => -1,
+  $query = new WP_Query(array(
+    'posts_per_page' => 8,
     'post_type' => 'photo'
   ));
 
   // Utilisation du template photo_block.php pour chaque photo
-  if ($photo_query->have_posts()) :
-    while ($photo_query->have_posts()) : $photo_query->the_post();
+  if ($query->have_posts()) :
       // Inclure le template photo_block.php
       include get_template_directory() . '/templates_parts/photo_block.php';
-    endwhile;
     wp_reset_postdata();
   endif;
   ?>
