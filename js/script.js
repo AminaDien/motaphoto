@@ -28,8 +28,8 @@ const burgerMenu = document.querySelector('.burger-menu');
 const menuH = document.querySelector('.menu-h');
 
 burgerMenu.addEventListener('click', () => {
-  menuH.classList.toggle('menu-active'); // Active/désactive la classe pour agrandir le menu
+  menuH.classList.toggle('menu-active');
+  document.body.classList.toggle('menu-active'); // Ajoute la classe au body
 });
-
 
 })(jQuery);
