@@ -5,7 +5,8 @@ wp_nav_menu([
     'menu_class' => 'menu-f'
 ]);?>
 
-<?php get_template_part('templates_parts/modale'); ?>
+<?php get_template_part('templates_parts/modale'); 
+    get_template_part( 'lightbox', get_post_format() ); ?>
 
 <?php wp_footer() ?>
 </body>
