@@ -23,7 +23,7 @@ $(document).ready(function(){
       $(".ref").val($('#ref-photo').text());
     });
     
-// Script pour activer le menu burger
+// MENU BURGER 
 const burgerMenu = document.querySelector('.burger-menu');
 const menuH = document.querySelector('.menu-h');
 
@@ -32,4 +32,29 @@ burgerMenu.addEventListener('click', () => {
   document.body.classList.toggle('menu-active'); // Ajoute la classe au body
 });
 
+// ACCUEIL 
+
+$(document).ready(function () {
+  var page = 2; // Le numéro de la page à charger
+
+  $('#load-more').on('click', function () {
+    var data = {
+      action: 'load_more_photos', // Action pour le serveur
+      page: page
+    };
+
+    $.ajax({
+      url: ajaxurl, // Variable ajaxurl définie par WordPress
+      data: data,
+      type: 'POST',
+      success: function (response) {
+        $('.photos_accueil').append(response); // Ajouter les nouvelles photos
+        page++;
+      }
+    });
+  });
+
+});
+
 })(jQuery);
+
