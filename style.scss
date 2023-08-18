@@ -192,13 +192,24 @@ p {
   .menu-pages li a {
     color: #fff;
     font-size: 4em;
+    margin-right: 10vh;
   }
+
+  .menu-pages li a:hover {
+  font-size: 4.2em;
+}
 
   .menu-pages button {
     color: #fff;
     background-color: red;
     font-size: 4em;
+    margin-right: 10vh;
   }
+
+  .menu-pages button:hover {
+    font-size: 4.2em;
+  }
+
   body.menu-active {
     overflow: hidden;
   }
@@ -549,6 +560,9 @@ img {
 .photos_accueil {
   margin-right: 5vw;
   margin-left: 5vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .photo_aimerezaussi {
@@ -668,102 +682,83 @@ img {
 
 // FILTRES 
 
-.filtre_taxo {
-  display: flex;
-  margin-left: 10vh;
-}
-
+/* Styles pour le conteneur des filtres */
 .filtre {
   display: flex;
-  justify-items: center;
-  margin-bottom: 4vh;
-}
-
-.filtre_categ {
-  margin-right: 4vh;
-}
-
-// acceuil
-
-.photo_newunephoto {
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-}
-
-.photo_newunephoto a {
-  color: #FFFFFF;
-  font-size: 21px;
-}
-
-.photo_newunephoto .fadedbox {
-  background-color: #000000;
-  position: absolute;
-  top: 0%;
-  left: 0;
-  color: #fff;
-  opacity: 0;
-  height: 29vw;
-  width: 29vw;
-}
-
-
-.photo_newunephoto:hover .fadedbox {
-  opacity: 0.5;
-  transition: 0.5s;
-
-}
-
-.photo_newunephoto .title {
-  font-size: 21px;
-  text-transform: uppercase;
-  color: #fff;
-}
-
-.photo_newunephoto .fadedbox {
-  display: flex;
-  justify-content: flex-end;
-  flex-direction: column;
-}
-
-.photo_newunephoto:hover .title,
-.photo_newunephoto:focus .title {
-  opacity: 1;
-}
-
-.title {
-  display: flex;
   justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-radius: 10px;
 }
 
-.photo_toutephoto {
+/* Styles pour les filtres "Catégories" et "Formats" */
+.filtre_taxo {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-  margin: 30px 84px;
+  gap: 20px; /* Espacement entre les filtres */
+  margin-left: 4vw;
 }
 
-.photo_newunephoto img {
+/* Styles pour les listes déroulantes */
+.postform {
+  width: 150px; /* Largeur des listes déroulantes */
+  padding: 8px 20px 8px 8px; /* Ajout de l'espace à droite */
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+/* Styles pour le filtre "Trier par" */
+.filtre_date {
+  margin-right: 5vw;
+}
+
+.nouveau_block img {
   object-fit: cover;
   width: 100%;
   height: 100%;
-
 }
 
-.photo_unephoto img {
-
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
+.nouveau_block {
+  padding-top: 5vh;
 }
 
-.photo_newunephoto {
-  height: 29vw;
-  width: 29vw;
-}
+/* Styles pour le conteneur des filtres en version mobile */
+@media (max-width: 768px) {
+  .filtre {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 10px;
+    border-radius: 10px;
+  }
 
-.photo_unephoto {
-  height: 29vw;
-  width: 29vw;
+  /* Styles pour les filtres "Catégories" et "Formats" en version mobile */
+  .filtre_taxo {
+    flex-direction: column;
+    gap: 0px; /* Espacement entre les filtres */
+    margin-left: 0; /* Réinitialisation de la marge */
+  }
+
+  /* Styles pour les listes déroulantes en version mobile */
+  .postform {
+    width: 100%; /* Remplissage de la largeur disponible */
+    margin-bottom: 10px; /* Espacement en bas */
+  }
+
+  /* Styles pour le filtre "Trier par" en version mobile */
+  .filtre_date {
+    width: 96%;
+    margin-top: 10px;
+    margin-left: 10px;
+  }
+
+  /* Styles pour le bloc "nouveau_block" en version mobile */
+  .nouveau_block {
+    padding-top: 3vh;
+  }
+  
+  /* Styles pour les images dans le bloc "nouveau_block" en version mobile */
+  .nouveau_block img {
+    object-fit: cover;
+    width: 100%;
+    height: auto; /* Ajustement automatique de la hauteur */
+  }
 }

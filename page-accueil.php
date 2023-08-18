@@ -20,12 +20,11 @@
 <div class="filtre">
     <div class="filtre_taxo">
         <div class="filtre_categ">
-            <label for="categorie">CATEGORIES</label>
             <form class="js-filter-form" method="post">
                 <?php
                 $terms = get_terms('categorie');
                 $select = "<div class='filtre'><select name='categorie' id='cat1' class='postform'>";
-                $select .= "<option value='-1'></option>";
+                $select .= "<option value='-1'>CATÉGORIES</option>";
                 foreach ($terms as $term) {
                     if ($term->count > 0) {
                         $select .= "<option value='" . $term->slug . "'>" . $term->name . "</option>";
@@ -37,12 +36,11 @@
             </form>
         </div>
         <div class="filtre_form">
-            <label for="format">FORMAT</label>
             <form class="js-filter-form" method="post">
                 <?php
                 $terms = get_terms('format');
                 $select = "<div class='filtre'><select name='format' id='format1' class='postform'>";
-                $select .= "<option value='-1'></option>";
+                $select .= "<option value='-1'>FORMATS</option>";
                 foreach ($terms as $term) {
                     if ($term->count > 0) {
                         $select .= "<option value='" . $term->slug . "'>" . $term->name . "</option>";
@@ -57,9 +55,8 @@
     <div class="filtre_date">
     <form class="js-filter-form" method="post">
         <div class='date'>
-            <label for="date">Trier par</label>
             <select name='date' id='date1' class='postform'>
-                <option value='-1'>Trier par</option>
+                <option value='-1'>TRIER PAR</option>
                 <option value='nouveaute'>Nouveauté</option>
                 <option value='anciens'>Les plus anciens</option>
             </select>
