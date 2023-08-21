@@ -3,9 +3,16 @@ document.addEventListener("DOMContentLoaded", function() {
   const closeButton = document.getElementById("close-lightbox");
   const prevButton = document.querySelector(".lightbox_prev");
   const nextButton = document.querySelector(".lightbox_next");
+  const openButton = document.querySelectorAll(".open-lightbox");
 
-  
-  // Fermer la lightbox en cliquant sur le bouton de fermeture
+  // ouverture lightbox
+    openButton.forEach(function(button){
+        button.addEventListener('click', function(){
+            lightbox.style.display = "block";
+        })
+    });
+
+  // Fermer la lightbox 
   closeButton.addEventListener("click", function() {
     lightbox.style.display = "none";
   });

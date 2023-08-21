@@ -551,6 +551,12 @@ main {
   display: block;
 }
 
+.open-lightbox {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
 .overlay {
   position: absolute;
   top: 0;
@@ -570,7 +576,7 @@ main {
   opacity: 1;
 }
 
-.overlay .fullscreen {
+.divfull {
   position: absolute;
   top: 10px;
   right: 10px;
@@ -651,6 +657,7 @@ main {
   }
 }
 .lightbox {
+  display: none;
   position: fixed;
   top: 0;
   left: 0;

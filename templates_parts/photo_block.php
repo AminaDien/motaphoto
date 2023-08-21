@@ -12,13 +12,19 @@
             <?php if (has_post_thumbnail()): ?>
 
                 <div class="photo_aimerezaussi">
-                    <a href="<?php echo get_the_permalink(); ?>" class="photo_link">
+                <div class="photo_link">
+                    <a href="<?php echo get_the_permalink(); ?>">
 
                     <?php the_post_thumbnail(); ?>
                         <div class="overlay">
-                            <img class="eye" src="<?php echo get_template_directory_uri(); ?>/assets/eye.png" alt="eye">
-                            <img class="fullscreen" src="<?php echo get_template_directory_uri(); ?>/assets/fullscreen.png" alt="fullscreen">
-                        </div></a>
+                        <div class="diveye">
+                        <a href="<?php the_permalink(); ?>"><img class="eye" src="<?php echo get_template_directory_uri(); ?>/assets/eye.png" alt="eye"></a>
+                        </div>
+                        <div class="divfull">
+                        <button class="open-lightbox"><img class="fullscreen open-lightbox" src="<?php echo get_template_directory_uri(); ?>/assets/fullscreen.png" alt="fullscreen"></button>
+                        </div>
+                        </div>
+                </div>
                 </div>
                    
         <?php endif; ?>
