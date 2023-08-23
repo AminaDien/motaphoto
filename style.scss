@@ -632,6 +632,29 @@ img {
   bottom: 0vw;
 }
 
+.photo-details {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  color: white;
+  width: 95%;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  opacity: 1;
+}
+
+.photo_link:hover .photo-details {
+  opacity: 1;
+}
+
+.photo-title,
+.photo-category {
+  font-size: 15px;
+  text-transform: uppercase;
+}
+
 // FILTRES 
 
 .filtre {
@@ -764,6 +787,21 @@ img {
   top: 50px;
   right: 90px;
 }
+
+/* Ajoutez ces règles CSS dans votre fichier de styles */
+
+.lightbox_content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%; /* Ajustez selon vos besoins */
+}
+
+.lightbox_content img {
+  max-width: 100%;
+  max-height: calc(100% - 150px);
+}
+
 
 /* responsive lightbox */
 
