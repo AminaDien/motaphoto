@@ -551,7 +551,7 @@ main {
   display: block;
 }
 
-.open-lightbox {
+.ouvrir-lightbox {
   border: none;
   background: none;
   cursor: pointer;
@@ -738,12 +738,11 @@ main {
   right: 90px;
 }
 
-/* Ajoutez ces règles CSS dans votre fichier de styles */
 .lightbox_content {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%; /* Ajustez selon vos besoins */
+  height: 100%;
 }
 
 .lightbox_content img {
@@ -752,5 +751,26 @@ main {
 }
 
 /* responsive lightbox */
+@media (max-width: 768px) {
+  .lightbox_next,
+  .lightbox_prev {
+    font-size: 0; /* Masquer le texte */
+  }
+  .lightbox_next::before {
+    content: "→"; /* Flèche vers la droite */
+    font-size: 30px;
+  }
+  .lightbox_prev::before {
+    content: "←"; /* Flèche vers la gauche */
+    font-size: 30px;
+  }
+  .lightbox_content {
+    flex-direction: column;
+    align-items: center;
+  }
+  .lightbox_content img {
+    max-height: calc(100% - 250px);
+  }
+}
 
 /*# sourceMappingURL=style.css.map */
