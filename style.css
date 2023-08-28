@@ -551,6 +551,10 @@ main {
   display: block;
 }
 
+.photo_newunephoto {
+  position: relative;
+}
+
 .ouvrir-lightbox {
   border: none;
   background: none;
@@ -573,6 +577,10 @@ main {
 }
 
 .photo_link:hover .overlay {
+  opacity: 1;
+}
+
+.photo_newunephoto:hover .overlay {
   opacity: 1;
 }
 
@@ -742,12 +750,21 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
+  height: 90%;
 }
 
 .lightbox_content img {
   max-width: 100%;
-  max-height: calc(100% - 150px);
+  max-height: 100%;
+}
+
+.lightboxrefcateg {
+  display: flex;
+  justify-content: center;
+}
+
+.lightbox__categ {
+  color: white;
 }
 
 /* responsive lightbox */
