@@ -811,10 +811,11 @@ img {
 .lightboxrefcateg {
   display: flex;
   justify-content: center;
+  color: white;
 }
 
-.lightbox__categ {
-  color: white;
+.lightboxref {
+  margin-right: 45vh;
 }
 
 /* responsive lightbox */
