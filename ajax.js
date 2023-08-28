@@ -1,6 +1,6 @@
 let currentPage = 1;
 jQuery('#load-more').on('click', function () {
-  currentPage++; // Do currentPage + 1, because we want to load the next page
+  currentPage++; // signifie que la prochaine page à charger sera la suivante
 
   jQuery.ajax({
     type: 'POST',

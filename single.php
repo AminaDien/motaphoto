@@ -9,7 +9,7 @@
 				CATÉGORIE : <?php echo strip_tags(get_the_term_list($post->ID, 'categorie'));?><br>
 				FORMAT : <?php echo strip_tags(get_the_term_list($post->ID, 'format' ));?><br>
 				TYPE :  <?php echo get_field('type');?><br>
-       		 	ANNÉE :<?php the_date(' Y'); ?><br>
+       	ANNÉE :<?php the_date(' Y'); ?><br>
 		</div>
 		<?php if (has_post_thumbnail()): ?>
         <img src="<?php the_post_thumbnail_url(array(500, 500)); ?>" alt="<?php the_title_attribute(); ?>" class="post-thumbnail" />
@@ -19,7 +19,7 @@
 			<p>Cette photo vous intéresse ?</p>
 			<a><button class="myBtn" id="lienmodale">Contact</button></a>
 			
-		<div class="photo_choix">
+	<div class="photo_choix">
     <div class="photo_avant">
         <?php
         $prev_post = get_previous_post();
@@ -40,7 +40,7 @@
         }
         ?>
     </div>
-</div>
+  </div>
 	  </div>
     <?php endwhile; ?>
   <?php endif; ?>

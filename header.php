@@ -24,10 +24,10 @@
     ?>
 
 <div class="burger-menu">
-        <div class="bar"></div>
-        <div class="bar"></div>
-        <div class="bar"></div>
-    </div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+</div>
 
 </nav>
 </section>

@@ -21,7 +21,6 @@ document.addEventListener("DOMContentLoaded", function() {
 // Ajouter un tableau pour stocker les URLs des images
 const imageUrls = Array.from(openButton).map(button => button.getAttribute("data-img-url"));
 let currentIndex = 0;
-console.log(imageUrls);
 
 // Fonction pour mettre à jour le contenu de la lightbox avec une image
 function updateLightboxContentWithImage(url) {

@@ -9,10 +9,10 @@
   ));
   //output the random post
   while ($the_query->have_posts()) : $the_query->the_post();
-    the_post_thumbnail('full', array('class' => 'hero-image'));
+    the_post_thumbnail('full', array('class' => 'hero-image')); //affiche la vignette (thumbnail) de l'article actuel, "full" est utilisée pour afficher l'image dans sa résolution originale. La classe CSS "hero-image" est également ajoutée à l'image.
   endwhile;
-  //Reset Post Data 
-  wp_reset_postdata();
+  //Reset Post Data réinitialise les données de publication après avoir exécuté la boucle. Cela permet de s'assurer que d'autres requêtes ultérieures ne sont pas affectées par cette boucle.
+  wp_reset_postdata(); 
   ?>
   <h1>PHOTOGRAPHE EVENT</h1>
 </div>
